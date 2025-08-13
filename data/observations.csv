@@ -1,0 +1,7 @@
+obs_id,ra_deg,dec_deg,mjd,mag,mag_err,filter,notes
+OBS001,153.217,-7.351,60234.5417,21.3,0.05,g,Potential moving obj.
+OBS002,153.482,-7.289,60235.5461,21.5,0.06,r,Clear skies
+OBS003,153.751,-7.421,60236.5505,20.9,0.04,g,High confidence candidate
+OBS004,153.992,-7.398,60237.5549,21.1,0.05,i,Slight cloud cover
+OBS005,154.217,-7.350,60238.5593,21.4,0.07,g,Check again next night
+
