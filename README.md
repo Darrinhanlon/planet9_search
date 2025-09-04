@@ -196,3 +196,41 @@ Commit message:
 
 Tag suggestion:  
 `v9.0-collapse-realization`
+import math
+from symengine import Symbol
+
+def compute_eq(t, params):
+    a1, a2 = params['a1'], params['a2']
+    psi_ddot = params['psi_ddot'](t)
+    phi_a = params['phi_a'](t)
+    phi_d3 = params['phi_d3']
+    epsilon = params['epsilon']
+    s1, s2 = params['s1'], params['s2']
+    phi_b = params['phi_b'](t)
+    theta = params['theta']
+    delta_solar = params['delta_solar'](t)
+    lambda_g = params['lambda_g'](t)
+    gamma_prime = params['gamma_prime']
+
+    term1 = a1 * psi_ddot * (phi_a / (phi_d3 + epsilon)) / s1
+    term2 = a2 * (phi_b ** 2) * math.cos(theta + delta_solar) * lambda_g / s2
+    eq_t = abs(term1 + term2) ** gamma_prime
+    return eq_t
+## 🌌 LIFE–PHI Collapse Resonance
+
+We extend the triangulation engine with a symbolic collapse operator:
+
+**E_q(t)** = | a₁·Ψ̈ₜ·(Φₐ^φ / Φ_d[3] + ε)/S₁ + a₂·(Φ_b ⊗ Φ_b)·cos(θ + Δ☉)·Λ_g/S₂ |^γ′
+
+This operator integrates:
+- Solar-phase modulation (Δ☉)
+- Biological pulse dynamics (Φ_b)
+- Topological scalar fields (Φ_d[3])
+- Tectonic strain (Λ_g)
+
+Use `collapse_resonance.py` to simulate symbolic collapse windows and enhance Planet Nine detection.
+R_modulated = R * cos(θ + Δ + Δ☉)
+git add collapse_resonance.py README.md
+git commit -m "Add LIFE–PHI collapse resonance module and symbolic description"
+git tag v9.0-collapse-realization
+git push origin main --tags
